@@ -9,7 +9,15 @@
 int gcd(const int a, const int b)
 {
 	// Replace this line with your code (have fun!).
-	return 0;
+	int x;
+	x = a > b ? b : a;
+	int result;
+	for (; x > 0; x--)
+		if ((a%x == 0) && (b%x == 0)) {
+			result = x;
+			break;
+		}		
+	return result;
 }
 
 // Fibonacci
@@ -19,5 +27,8 @@ int gcd(const int a, const int b)
 long long fibonacci(const int n)
 {
 	// Replace this line with your code (challenge: do this with recursion!).
-	return 0;
+	if (n <= 2)
+		return 1;
+	else
+		return (fibonacci(n - 1) + fibonacci(n - 2));
 }
